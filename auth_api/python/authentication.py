@@ -37,7 +37,7 @@ def getRole(username):
 
 def tokenVerification(token):
     try:
-        jwt.decode(token, os.environ['JWT_SEED'], algorithms=['HS256'])
+        jwt.decode(token, os.environ['JWT_SEED'], algorithms=['HS512'])
         return True
     except ExpiredSignatureError:
         return False

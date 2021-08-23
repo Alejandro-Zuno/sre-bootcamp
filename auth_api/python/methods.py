@@ -7,7 +7,7 @@ from flask import abort
 class Token:
 
     def generate_token(self,user):
-        encoded_jwt = jwt.encode({"role": getRole(user)}, os.environ['JWT_SEED'], algorithm="HS256")
+        encoded_jwt = jwt.encode({"role": getRole(user)}, os.environ['JWT_SEED'], algorithm="HS512")
         return encoded_jwt
 
 
